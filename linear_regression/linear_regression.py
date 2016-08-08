@@ -5,6 +5,8 @@ X = iris.data[:, [2,3]]
 y = iris.target
 
 from sklearn.cross_validation import train_test_split
+
+#test_size is ratio of test set over whole set
 X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3, random_state=0)
 
 from sklearn.preprocessing import StandardScaler
@@ -14,6 +16,8 @@ X_train_std = sc.transform(X_train)
 X_test_std = sc.transform(X_test)
 
 from sklearn.linear_model import Perceptron
+
+#n_iter : number of iterations, eta0 : learning rate
 perceptron = Perceptron(n_iter=36, eta0=0.01, random_state=0)
 perceptron.fit(X_train_std,y_train)
 
