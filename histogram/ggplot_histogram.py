@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 from ggplot import *
-import time
 
 mu = 0
 sigma = 3
@@ -12,6 +11,6 @@ df = pd.DataFrame(x,columns=['x'])
 
 p = ggplot(aes(x='x'), data=df)
 p + geom_histogram(bins=100)
-time.sleep(10)
+
 
 
